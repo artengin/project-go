@@ -1,11 +1,12 @@
 package main
 
 import (
-  "fmt"
-  "project-go/greeting"
-  "github.com/fatih/color"
+	"fmt"
+	"github.com/fatih/color"
+	"project-go/greeting"
 )
+
 func main() {
-  fmt.Println(greeting.Hello())
-  color.Cyan(greeting.Bye())
+	fmt.Println(greeting.Hello())
+	color.Cyan(greeting.Bye())
 }
