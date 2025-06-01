@@ -4,30 +4,22 @@ import (
 	"fmt"
 	"github.com/fatih/color"
 	"project-go/greeting"
+	"strings"
+	"unicode"
 )
-func UniqueUserIDs(userIDs []int64) []int64 {
-  if len(userIDs) <= 1 {
-    return userIDs
-  }
-  mp := map[int64]bool{}
-  for _, id := range userIDs {
-    mp[id] = true
-  }
+func LatinLetters(s string) string {
+	sb := strings.Builder{}
 
-  sl := make([]int64, 0, len(mp))
-
-	for i := range mp {
-
-    	sl = append(sl, int64(i))
+	for _, r := range s {
+		if unicode.Is(unicode.Latin, r) {
+			sb.WriteRune(r)
+		}
 	}
-  
-  return sl
 
+	return sb.String()
 }
-
 func main() {
 	fmt.Println(greeting.Hello(), greeting.Bye())
 	color.Cyan(greeting.Bye())
-
-	fmt.Println(UniqueUserIDs([]int64{55, 55, 33, 22}))
+	fmt.Println(LatinLetters(" abc1"))
 }
