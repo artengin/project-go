@@ -1,12 +1,12 @@
-   package greeting
+package greeting
 
-   var greeting string = "Golang for Brave!"
-   var bye string = "Bye - Bye!"
+var greeting string = "Golang for Brave!"
+var bye string = "Bye - Bye!"
 
-   func Hello() string {
-       return greeting
-   }
+func Hello() string {
+	return greeting
+}
 
-   func Bye() string {
-       return bye
-   }
+func Bye() string {
+	return bye
+}
